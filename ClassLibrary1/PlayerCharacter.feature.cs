@@ -82,6 +82,9 @@ namespace ClassLibrary1
 #line 6
  testRunner.Given("I a new player", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
+#line 7
+ testRunner.Given("There is a new monster", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
         }
         
         void System.IDisposable.Dispose()
@@ -92,7 +95,7 @@ namespace ClassLibrary1
         [Xunit.SkippableTheoryAttribute(DisplayName="Health reduction")]
         [Xunit.TraitAttribute("FeatureTitle", "Feature2")]
         [Xunit.TraitAttribute("Description", "Health reduction")]
-        [Xunit.TraitAttribute("Category", "dmg")]
+        [Xunit.TraitAttribute("Category", "player_dmg")]
         [Xunit.InlineDataAttribute("0", "100", "0", "false", new string[0])]
         [Xunit.InlineDataAttribute("40", "60", "0", "false", new string[0])]
         [Xunit.InlineDataAttribute("50", "70", "20", "false", new string[0])]
@@ -100,7 +103,7 @@ namespace ClassLibrary1
         public void HealthReduction(string damage, string remainingHealth, string heal, string dead, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "dmg"};
+                    "player_dmg"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -112,7 +115,7 @@ namespace ClassLibrary1
             argumentsOfScenario.Add("heal", heal);
             argumentsOfScenario.Add("dead", dead);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Health reduction", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 8
+#line 10
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -125,16 +128,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-#line 9
+#line 11
  testRunner.When(string.Format("I take {0} damage", damage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 10
+#line 12
  testRunner.And(string.Format("I heal myself for {0} dmg", heal), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 11
+#line 13
  testRunner.Then(string.Format("My health should now be {0}", remainingHealth), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 12
+#line 14
  testRunner.And(string.Format("I should be {0} dead", dead), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -151,7 +154,7 @@ this.FeatureBackground();
                     "heal"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Overheal", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 22
+#line 24
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -164,11 +167,50 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-#line 23
+#line 25
 testRunner.When("I heal myself for 100 dmg", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 24
+#line 26
 testRunner.Then("My health should now be 100", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Adding weapon damage")]
+        [Xunit.TraitAttribute("FeatureTitle", "Feature2")]
+        [Xunit.TraitAttribute("Description", "Adding weapon damage")]
+        [Xunit.TraitAttribute("Category", "monster_dmg")]
+        public void AddingWeaponDamage()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "monster_dmg"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Adding weapon damage", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 29
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 5
+this.FeatureBackground();
+#line hidden
+#line 30
+    testRunner.Given("I have a true weapon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 31
+ testRunner.And("We weapon is true magic", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 32
+ testRunner.When("I hit monster with magic weapon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 33
+ testRunner.Then("Monster HP is 75", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
