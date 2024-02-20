@@ -56,7 +56,7 @@ namespace ClassLibrary1
         }
 
 
-        //___________________________________________//
+        //____________Newly Added section____________//
 
         [Given(@"I have a (.*) weapon")]
         public void GivenIHaveABoolWeapon(bool p0)
