@@ -8,6 +8,12 @@ namespace Player
 {
     public class PlayerCharacter
     {
+        public int Health { get; private set; } = 100;
+        public bool isDead { get; private set; }
+        public int Power { get; private set; } = 10;
+        public bool hasWeapon { get; private set; }
+
+
         public void Hit(int damage) { 
             Health -= damage;
 
@@ -18,8 +24,12 @@ namespace Player
             if (Health > 100) { Health = 100; }
         }
 
-        public int Health { get; private set; } = 100;
-        public bool isDead { get; private set; }
+        public void Weaponized()
+        {
+            hasWeapon = true;
+        }
+
+        
     }
 
     
