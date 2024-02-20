@@ -4,7 +4,7 @@ A short summary of the feature
 
 Background: 
 	Given I a new player
-	Given There is a new monster
+	Given There is a monster
 
 @player_dmg
 Scenario Outline: Health reduction
@@ -28,7 +28,17 @@ Then My health should now be 100
 @monster_dmg
 Scenario: Adding weapon damage
     Given I have a true weapon
-	And We weapon is true magic
+	And The weapon is true magic
 	When I hit monster with magic weapon
 	Then Monster HP is 75
+
+@general_Mechanics
+Scenario: Racial differences
+Given I am a new Gnome player
+Given There is a new Goblin monster
+And I have a True weapon
+Given The weapon is true magic
+When I hit monster with magic weapon
+Then Goblin Monster HP is 50
+And I am a Gnome player
 
