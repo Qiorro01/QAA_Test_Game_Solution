@@ -43,7 +43,7 @@ namespace Player
         public void isOcr()
         {
             Health = 110;
-            Race = "Gnome";
+            Race = "Orc";
             Power += 10;
         }
         public void isGoblin()

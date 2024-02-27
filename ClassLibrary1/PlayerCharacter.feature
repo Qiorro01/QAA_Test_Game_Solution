@@ -42,3 +42,8 @@ When I hit monster with magic weapon
 Then Goblin Monster HP is 50
 And I am a Gnome player
 
+@general_Mechanics
+Scenario: Does player have a Race
+	When Player is Orc
+	Then Race = true
+

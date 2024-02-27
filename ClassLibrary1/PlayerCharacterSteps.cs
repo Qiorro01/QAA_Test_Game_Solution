@@ -130,5 +130,22 @@ namespace ClassLibrary1
         }
 
 
+        [When(@"Player is Orc")]
+        public void WhenPlayerIsOrc()
+        {
+            _player.isOcr();
+        }
+
+
+        [Then(@"Race = (.*)")]
+        public void ThenRaceTrue(bool race)
+        {
+
+            Assert.AreEqual(_player.Race, "Orc");
+
+        }
+
+
+
     }
 }
