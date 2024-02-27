@@ -6,22 +6,8 @@ using System.Threading.Tasks;
 
 namespace Player
 {
-    public class Monster
+    public class Monster : Actor
     {
-        public void Hit(int damage)
-        {
-            Health -= damage;
-
-            if (Health <= 0) { isDead = true; }
-        }
-
-        public void Heal(int heal)
-        {
-            Health += heal;
-            if (Health > 100) { Health = 100; }
-        }
-
-        public int Health { get; private set; } = 100;
-        public bool isDead { get; private set; }
+        
     }
 }
